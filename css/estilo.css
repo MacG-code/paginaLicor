@@ -1,0 +1,362 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+h2{
+    text-align: center;
+    font-size: 40px;
+}
+
+header {
+    position: relative;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    background-color: goldenrod;
+    border-radius: 10px;
+    font-size: 100px;
+    text-align: center;
+    z-index: 2;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn { /* "fadein" animacion desvanecimiento*/
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 10;
+    }
+}
+.menu {
+    background-color: goldenrod;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+}
+
+
+/* -------------Barra de desplazamiento  (chrome)------------ */
+::-webkit-scrollbar {
+    width: 7px; /* Ancho de la barra de desplazamiento */
+}
+::-webkit-scrollbar-thumb {
+    background-color: goldenrod; /* color barra de desplazamiento */
+    border-radius: 6px; /* Borde redondeado*/
+}
+
+#producto {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    height: max-content;
+    flex-wrap: wrap;
+    text-align: center;
+}
+#producto h2{
+    color: black;
+    border: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Clases de producto */
+/* .licor, .vino, .cerveza { */
+ .licor {
+    text-align: center;
+    max-width: 200px;
+    margin: 5%;
+    background-color: goldenrod; /* Fondo blanco para resaltar el contenido */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 10px; /* Esquinas redondeadas */
+    height: 30%;   
+}
+.licor video {
+    max-width: 100%;
+    height: 50%; /* Establece el alto deseado para los videos */
+    object-fit: cover; /* Ajusta el tamaño del video manteniendo su relación de aspecto */
+    border-radius: 10%;
+}
+.licor p{
+    color: white;
+}
+.licor a{
+    list-style: none;
+}
+/* Media Query para vista vertical en pantallas de hasta 768px de ancho */
+@media (max-width: 100px) {
+    .licor {
+        flex-direction: row; /* Vuelve a la dirección de la flexbox a fila para pantallas más grandes */
+        justify-content: space-around; /* Distribuye los elementos de manera uniforme a lo largo del eje principal */
+    }
+    .licor p {
+        display: none; /* Oculta los párrafos */
+    }
+
+    /* .licor a {
+        display: none; /* Oculta los enlaces 
+    } */
+}
+
+/* ------------Productos Destacados */
+#destacados {
+    background-color: goldenrod;
+    height: auto;
+    padding: 20px;
+    text-align: center; /* Centrar el contenido */
+
+}
+
+#destacados h2 {
+    color: black;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+#destacados a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces dentro de #destacados */
+    color: inherit; /* Mantiene el color de texto original de los enlaces */
+}
+
+.destacados-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.destacado {
+    text-align: center;
+    max-width: 200px;
+    margin: 2%;
+    background-color: black; /* Fondo blanco para resaltar el contenido */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 10px; /* Esquinas redondeadas */
+    height: 30%;    
+    
+}
+
+.destacado img {
+    max-width: 100%;
+    height: 50%; 
+    object-fit: cover;
+    border-radius: 25%;
+    /* box-shadow: 0 4px 8px 1px  gold; */
+}
+.destacado h3 {
+    color: wheat;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.destacado a{
+    list-style: none;
+}
+
+/* -------------------Ultimos Agregados----------------- */
+/* Estilos CSS */
+#publicaciones {
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    width: auto;
+}
+
+#publicaciones h2 {
+    color: goldenrod;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.publicaciones {
+    text-align: center;
+}
+
+.publicacion {
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto; /* Ajuste aquí para centrar el bloque */
+}
+
+.publicacion p, h3 {
+    color: white;
+
+}
+
+.publicacion img {
+    max-width: 100%;
+    height: 10%; /* Ajuste aquí para mantener la proporción */
+    object-fit: cover;
+    border-radius: 5%; /* Borde redondeado */
+    
+    display: block; /* Añadido para eliminar espacio extra debajo de la imagen */
+    margin: 0 auto; /* Añadido para centrar la imagen */
+}
+
+/* -----footer------- */
+footer {
+    background-color: goldenrod;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    width: auto;
+}
+.redes-sociales a {
+    color: black; /* Cambiamos el color de los íconos de redes sociales */
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.redes-sociales a:hover {
+    color: #555;
+}
+/* --------------------PAgina Licores, Vinos y Cervezas -----------------*/
+/* Estilos para la sección de la carta */
+#carta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Estilos para cada carta de licor, vino y cerveza */
+
+/* Estilo al pasar el mouse por encima de una carta */
+
+
+/* Estilos para las imágenes dentro de las cartas */
+#carta img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espacio entre la imagen y el título */
+}
+
+/* Estilos para los títulos de las cartas */
+#carta h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+/* Estilos para los párrafos de descripción y detalles */
+#carta p {
+    color: #555;
+}
+
+/* Estilos para los enlaces dentro de las cartas */
+#carta a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Estilos para los enlaces al pasar el mouse por encima */
+#carta a:hover {
+    background-color: #555;
+}
+
+/* Media Query para vista vertical en pantallas de hasta 768px de ancho */
+@media (max-width: 768px) {
+    #carta li {
+        width: 100%;
+    }
+}
+
+
+
+/* -------------Pagina Contacto------------ */
+#contacto {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+#contacto h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+
+textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+
+
